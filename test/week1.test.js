@@ -75,7 +75,7 @@ describe("getMiddleCharacter", () => {
   });
 });
 
-describe.only("reverseWord", () => {
+describe("reverseWord", () => {
   test("returns the provided word, reversed", () => {
     expect(reverseWord("foo")).toBe("oof");
   });
@@ -87,7 +87,7 @@ describe.only("reverseWord", () => {
   });
 });
 
-describe("reverseAllWords", () => {
+describe.only("reverseAllWords", () => {
   test("reverses a single word in an array", () => {
     expect(reverseAllWords(["jest"])).toEqual(["tsej"]);
   });
