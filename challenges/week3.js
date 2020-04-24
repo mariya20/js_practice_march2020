@@ -5,7 +5,10 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Your code here!
+  for (var x = 1; x < words.length; x++) {
+    words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
+  }
+  return words.toString().replace(/,/g, "");
 }
 
 function getTotalSubjects(people) {
@@ -30,5 +33,5 @@ module.exports = {
   camelCaseWords,
   getTotalSubjects,
   checkIngredients,
-  duplicateNumbers
+  duplicateNumbers,
 };
