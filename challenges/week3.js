@@ -34,10 +34,7 @@ function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
 
-  let duplicates = arr1.filter(function (val) {
-    return arr2.indexOf(val) != -1;
-  });
-
+  let duplicates = arr1.filter((val) => arr2.indexOf(val) != -1);
   let sortedDuplicates = duplicates.sort((a, b) => a - b);
   let uniqueItems = [...new Set(sortedDuplicates)];
 
