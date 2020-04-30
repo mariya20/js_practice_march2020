@@ -19,7 +19,11 @@ function findNamesBeginningWith(names, char) {
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  // Your code here
+  let newArr = [];
+  for (let item of words) {
+    if (item.startsWith("to ")) newArr.push(item);
+  }
+  return newArr;
 }
 
 function getIntegers(nums) {
