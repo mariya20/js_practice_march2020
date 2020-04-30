@@ -1,6 +1,10 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  let newArr = [];
+  for (let item of nums) {
+    if (item < 1) newArr.push(item);
+  }
+  return newArr;
 }
 
 function findNamesBeginningWith(names, char) {
@@ -48,5 +52,5 @@ module.exports = {
   getCities,
   getSquareRoots,
   findSentencesContaining,
-  getLongestSides
+  getLongestSides,
 };
