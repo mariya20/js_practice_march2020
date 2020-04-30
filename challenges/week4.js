@@ -46,7 +46,9 @@ function getCities(users) {
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  let newArr = [];
+  nums.forEach((element) => newArr.push(+Math.sqrt(element).toFixed(2)));
+  return newArr;
 }
 
 function findSentencesContaining(sentences, str) {
