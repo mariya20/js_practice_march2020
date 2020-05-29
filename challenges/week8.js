@@ -54,8 +54,8 @@ const findNeedle = (haystack, searchTerm) => {
   const myPattern = new RegExp(searchTerm.toLowerCase(), "g");
   let count = 0;
 
-  for (var i = 0; i < newArr.length; i++) {
-    var result = newArr[i].match(myPattern);
+  for (let i = 0; i < newArr.length; i++) {
+    const result = newArr[i].match(myPattern);
     if (result) {
       count++;
     }
@@ -65,7 +65,20 @@ const findNeedle = (haystack, searchTerm) => {
 
 const getWordFrequencies = (str) => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+
+  const cleanString = str.replace(/[\.,-\/#!?$%\^&\*;:{}=\-_`~()]/g, "");
+  const list = cleanString.toLowerCase().split(" ");
+  let words = {};
+
+  for (let i = 0; i < list.length; i++) {
+    const word = list[i];
+    if (Object.prototype.hasOwnProperty.call(words, word)) {
+      words[word]++;
+    } else {
+      words[word] = 1;
+    }
+  }
+  return words;
 };
 
 module.exports = {
