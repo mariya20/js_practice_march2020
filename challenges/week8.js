@@ -49,7 +49,18 @@ const arrShift = (arr) => {
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  // Your code here!
+
+  const newArr = Object.values(haystack).toString().toLowerCase().split(", ");
+  const myPattern = new RegExp(searchTerm.toLowerCase(), "g");
+  let count = 0;
+
+  for (var i = 0; i < newArr.length; i++) {
+    var result = newArr[i].match(myPattern);
+    if (result) {
+      count++;
+    }
+  }
+  return count > 0;
 };
 
 const getWordFrequencies = (str) => {
