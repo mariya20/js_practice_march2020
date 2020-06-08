@@ -4,8 +4,20 @@
  * @param {Array} arr
  * @returns {Number}
  */
-const sumMultiples = arr => {
+const sumMultiples = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
+  const newArr = arr
+    .filter((num) => {
+      if (
+        Number.isInteger(num) &&
+        num % parseInt(num) === 0 &&
+        (num % 3 === 0 || num % 5 === 0)
+      ) {
+        return num;
+      }
+    })
+    .reduce((a, b) => a + b, 0);
+  return newArr;
 };
 
 /**
@@ -13,7 +25,7 @@ const sumMultiples = arr => {
  * @param {String} str
  * @returns {Boolean}
  */
-const isValidDNA = str => {
+const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
 };
 
@@ -22,7 +34,7 @@ const isValidDNA = str => {
  * @param {String} str
  * @returns {String}
  */
-const getComplementaryDNA = str => {
+const getComplementaryDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
 };
 
@@ -31,7 +43,7 @@ const getComplementaryDNA = str => {
  * @param {Number} n
  * @returns {Boolean}
  */
-const isItPrime = n => {
+const isItPrime = (n) => {
   if (n === undefined) throw new Error("n is required");
 };
 
@@ -74,5 +86,5 @@ module.exports = {
   getComplementaryDNA,
   isItPrime,
   createMatrix,
-  areWeCovered
+  areWeCovered,
 };

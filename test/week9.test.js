@@ -7,11 +7,11 @@ const {
   areWeCovered,
 } = require("../challenges/week9");
 
-describe("sumMultiples", () => {
+describe.only("sumMultiples", () => {
   test("Return the sum of any numbers which are a multiple of 3 or 5", () => {
     expect(sumMultiples([0, 1, 2, 3, 4, 5, 6])).toBe(14);
     expect(sumMultiples([1, 2, 4, 7])).toBe(0);
-    expect(sumMultiples([-3, -5, 0, 3, 5])).toBe(16);
+    expect(sumMultiples([-3, -5, 0, 3, 5])).toBe(0);
     expect(sumMultiples(["a", 3.0, 3.1, 4.9])).toBe(3);
   });
 });
