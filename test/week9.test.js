@@ -31,7 +31,7 @@ describe("getComplementaryDNA", () => {
   });
 });
 
-describe.only("isItPrime", () => {
+describe("isItPrime", () => {
   test("Return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
     expect(isItPrime(7)).toBe(true);
     expect(isItPrime(1)).toBe(false);
@@ -41,14 +41,14 @@ describe.only("isItPrime", () => {
   });
 });
 
-describe("createMatrix", () => {
+describe.only("createMatrix", () => {
   test("Return an array of n arrays, each filled with n items", () => {
-    expect(createMatrix(3, "foo")).toBe([
+    expect(createMatrix(3, "foo")).toStrictEqual([
       ["foo", "foo", "foo"],
       ["foo", "foo", "foo"],
       ["foo", "foo", "foo"],
     ]);
-    expect(createMatrix(1, "poo")).toBe([["poo"]]);
+    expect(createMatrix(1, "poo")).toStrictEqual([["poo"]]);
   });
 });
 
