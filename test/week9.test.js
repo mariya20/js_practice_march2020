@@ -25,16 +25,17 @@ describe("isValidDNA", () => {
   });
 });
 
-describe.only("getComplementaryDNA", () => {
+describe("getComplementaryDNA", () => {
   test("Return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of 'ACTG' would have a complementary DNA string of 'TGAC'", () => {
     expect(getComplementaryDNA("ACTG")).toBe("TGAC");
   });
 });
 
-describe("isItPrime", () => {
+describe.only("isItPrime", () => {
   test("Return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
     expect(isItPrime(7)).toBe(true);
-    expect(isItPrime(1)).toBe(true);
+    expect(isItPrime(1)).toBe(false);
+    expect(isItPrime(-1)).toBe(false);
     expect(isItPrime(0)).toBe(false);
     expect(isItPrime("o")).toBe(false);
   });
