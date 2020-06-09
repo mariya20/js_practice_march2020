@@ -27,6 +27,7 @@ const sumMultiples = (arr) => {
  */
 const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  return !/[^GCTA]/.test(str.toUpperCase());
 };
 
 /**
@@ -36,6 +37,13 @@ const isValidDNA = (str) => {
  */
 const getComplementaryDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  const mapObj = {
+    A: "T",
+    C: "G",
+    T: "A",
+    G: "C",
+  };
+  return (str = str.replace(/A|C|T|G/gi, (matched) => mapObj[matched]));
 };
 
 /**

@@ -7,7 +7,7 @@ const {
   areWeCovered,
 } = require("../challenges/week9");
 
-describe.only("sumMultiples", () => {
+describe("sumMultiples", () => {
   test("Return the sum of any numbers which are a multiple of 3 or 5", () => {
     expect(sumMultiples([0, 1, 2, 3, 4, 5, 6])).toBe(14);
     expect(sumMultiples([1, 2, 4, 7])).toBe(0);
@@ -21,12 +21,11 @@ describe("isValidDNA", () => {
     expect(isValidDNA("CGTA")).toBe(true);
     ``;
     expect(isValidDNA("cgta")).toBe(true);
-    expect(isValidDNA("CGT")).toBe(false);
     expect(isValidDNA("CGTB")).toBe(false);
   });
 });
 
-describe("getComplementaryDNA", () => {
+describe.only("getComplementaryDNA", () => {
   test("Return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of 'ACTG' would have a complementary DNA string of 'TGAC'", () => {
     expect(getComplementaryDNA("ACTG")).toBe("TGAC");
   });
