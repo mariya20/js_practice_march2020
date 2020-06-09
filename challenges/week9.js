@@ -93,6 +93,17 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+
+  let subArr = [];
+  for (const value of staff) subArr.push(...value.rota);
+
+  let map = {};
+  for (let i = 0; i < subArr.length; i++) {
+    let item = subArr[i];
+    map[item] = map[item] + 1 || 1;
+  }
+
+  return map[day] >= 3;
 };
 
 module.exports = {

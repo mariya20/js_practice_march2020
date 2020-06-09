@@ -41,7 +41,7 @@ describe("isItPrime", () => {
   });
 });
 
-describe.only("createMatrix", () => {
+describe("createMatrix", () => {
   test("Return an array of n arrays, each filled with n items", () => {
     expect(createMatrix(3, "foo")).toStrictEqual([
       ["foo", "foo", "foo"],
@@ -52,7 +52,7 @@ describe.only("createMatrix", () => {
   });
 });
 
-describe("areWeCovered", () => {
+describe.only("areWeCovered", () => {
   test("Return true/false depending on whether there are enough staff scheduled for the given day.", () => {
     const staff = [
       { name: "Leanne", rota: ["Monday", "Tuesday", "Friday"] },
@@ -65,11 +65,11 @@ describe("areWeCovered", () => {
       { name: "Neil", rota: ["Saturday", "Sunday", "Friday"] },
     ];
     expect(areWeCovered(staff, "Sunday")).toBe(true);
-    expect(areWeCovered(staff, "Monday")).toBe(true);
+    expect(areWeCovered(staff, "Monday")).toBe(false);
     expect(areWeCovered(staff, "Tuesday")).toBe(true);
-    expect(areWeCovered(staff, "Wednesday")).toBe(true);
-    expect(areWeCovered(staff, "Thursday")).toBe(true);
+    expect(areWeCovered(staff, "Wednesday")).toBe(false);
+    expect(areWeCovered(staff, "Thursday")).toBe(false);
     expect(areWeCovered(staff, "Friday")).toBe(true);
-    expect(areWeCovered(staff, "Saturday")).toBe(false);
+    expect(areWeCovered(staff, "Saturday")).toBe(true);
   });
 });
