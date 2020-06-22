@@ -23,7 +23,7 @@ describe("createRange", () => {
   });
 });
 
-describe.only("getScreentimeAlertList", () => {
+describe("getScreentimeAlertList", () => {
   test("The function returns username if date match and over 100 mins", () => {
     const users = [
       {
@@ -71,11 +71,11 @@ describe.only("getScreentimeAlertList", () => {
   });
 });
 
-describe("hexToRGB", () => {
+describe.only("hexToRGB", () => {
   test("The function should transform the hex code into an RGB code, returned as a string", () => {
     expect(hexToRGB("#FF1133")).toEqual("rgb(255,17,51)");
   });
-  test("Case insensitive", () => {
+  test("Case sensitive", () => {
     expect(hexToRGB("#ff1133")).toEqual("rgb(255,17,51)");
   });
 });
