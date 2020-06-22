@@ -13,7 +13,7 @@ describe("sumDigits", () => {
   });
 });
 
-describe("createRange", () => {
+describe.only("createRange", () => {
   test("The function returns correct array when passed values for start, end and step", () => {
     expect(createRange(3, 11, 2)).toEqual([3, 5, 7, 9, 11]);
     expect(createRange(-5, 5, 5)).toEqual([-5, 0, 5]);
