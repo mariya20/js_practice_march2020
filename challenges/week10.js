@@ -4,6 +4,10 @@
  */
 const sumDigits = (n) => {
   if (n === undefined) throw new Error("n is required");
+  return n
+    .toString()
+    .match(/-?\d/g)
+    .reduce((a, b) => +a + +b);
 };
 
 /**

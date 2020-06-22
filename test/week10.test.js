@@ -6,14 +6,14 @@ const {
   findWinner,
 } = require("../challenges/week10");
 
-describe("sumDigits", () => {
+describe.only("sumDigits", () => {
   test("The function returns the sum of all digits", () => {
-    expect(sumDigits(-123)).toBe(6);
+    expect(sumDigits(123)).toBe(6);
     expect(sumDigits(-11)).toBe(0);
   });
 });
 
-describe.only("createRange", () => {
+describe("createRange", () => {
   test("The function returns correct array when passed values for start, end and step", () => {
     expect(createRange(3, 11, 2)).toEqual([3, 5, 7, 9, 11]);
     expect(createRange(-5, 5, 5)).toEqual([-5, 0, 5]);
