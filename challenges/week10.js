@@ -96,15 +96,35 @@ const hexToRGB = (hexStr) => {
 /**
  * This function takes a noughts and crosses board represented as an array, where an empty space is represented with null.
  * [
- *  ["X", "0", null],
- *  ["X", null, "0"],
- *  ["X", null, "0"]
+ *  ["X", "0", "0"],
+ *  ["0", "X", "0"],
+ *  ["X", "0", "0"]
  * ]
  * The function should return "X" if player X has won, "0" if the player 0 has won, and null if there is currently no winner.
  * @param {Array} board
  */
+
 const findWinner = (board) => {
+  const winningConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
   if (board === undefined) throw new Error("board is required");
+  for (let i = 0; i <= 7; i++) {
+    const winCondition = winningConditions[i];
+    let a = board[winCondition[0]];
+    let b = board[winCondition[1]];
+    let c = board[winCondition[2]];
+
+    if (a === b && b === c) return a;
+  }
+  return "Game ended in a draw!";
 };
 
 module.exports = {

@@ -71,7 +71,7 @@ describe("getScreentimeAlertList", () => {
   });
 });
 
-describe.only("hexToRGB", () => {
+describe("hexToRGB", () => {
   test("The function should transform the hex code into an RGB code, returned as a string", () => {
     expect(hexToRGB("#FF1133")).toEqual("rgb(255,17,51)");
   });
@@ -80,29 +80,17 @@ describe.only("hexToRGB", () => {
   });
 });
 
-describe("findWinner", () => {
+describe.only("findWinner", () => {
   test("The function returns X when X is the winner", () => {
-    const board = [
-      ["X", "0", null],
-      ["X", null, "0"],
-      ["X", null, "0"],
-    ];
-    expect(findWinner(board)).toEqual("X");
+    const board = ["X", "0", "X", "X", "0", "0", "X", "X", "X"];
+    expect(findWinner(board)).toBe("X");
   });
   test("The function returns 0 when 0 is the winner", () => {
-    const board = [
-      ["X", "X", null],
-      ["0", "0", "0"],
-      ["X", null, null],
-    ];
-    expect(findWinner(board)).toEqual("0");
+    const board = ["X", "0", "X", "0", "0", "0", "0", "X", "X"];
+    expect(findWinner(board)).toBe("0");
   });
   test("The function returns null when no current winner", () => {
-    const board = [
-      [null, "X", null],
-      ["0", null, "0"],
-      ["X", null, null],
-    ];
-    expect(findWinner(board)).toEqual(null);
+    const board = ["X", "0", "X", "X", "0", "0", "0", "X", "X"];
+    expect(findWinner(board)).toBe("Game ended in a draw!");
   });
 });
