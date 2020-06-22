@@ -52,7 +52,7 @@ describe("createMatrix", () => {
   });
 });
 
-describe.only("areWeCovered", () => {
+describe("areWeCovered", () => {
   test("Return true/false depending on whether there are enough staff scheduled for the given day.", () => {
     const staff = [
       { name: "Leanne", rota: ["Monday", "Tuesday", "Friday"] },
