@@ -60,6 +60,19 @@ const createRange = (start, end, step = 1) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+
+  let alert = [];
+  for (let i = 0; i < users.length; i++) {
+    for (let j = 0; j < users[i].screenTime.length; j++) {
+      let overLimitMins =
+        Object.values(users[i].screenTime[j].usage).reduce((a, b) => a + b) >
+        100;
+
+      if (overLimitMins && users[i].screenTime[j].date === date)
+        alert.push(users[i].username);
+    }
+  }
+  return alert;
 };
 
 /**

@@ -6,7 +6,7 @@ const {
   findWinner,
 } = require("../challenges/week10");
 
-describe.only("sumDigits", () => {
+describe("sumDigits", () => {
   test("The function returns the sum of all digits", () => {
     expect(sumDigits(123)).toBe(6);
     expect(sumDigits(-11)).toBe(0);
@@ -23,7 +23,7 @@ describe("createRange", () => {
   });
 });
 
-describe("getScreentimeAlertList", () => {
+describe.only("getScreentimeAlertList", () => {
   test("The function returns username if date match and over 100 mins", () => {
     const users = [
       {
